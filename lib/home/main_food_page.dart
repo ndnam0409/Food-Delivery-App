@@ -29,7 +29,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                       BigText(text: "Vietnam", color: AppColors.mainColor),
                       Row(
                         children: [
-                          SmallText(text: "Kon Tum", color: Colors.black54),
+                          SmallText(text: "Binh Duong", color: Colors.black54),
                           const Icon(Icons.arrow_drop_down_rounded),
                         ],
                       ), 
@@ -37,8 +37,8 @@ class _MainFoodPageState extends State<MainFoodPage> {
                   ),
                   Center(
                     child: Container(
-                      width: 45,
-                      height: 45,
+                      width: 43,
+                      height: 43,
                       child: Icon(
                         Icons.search,
                         color: Colors.white,
