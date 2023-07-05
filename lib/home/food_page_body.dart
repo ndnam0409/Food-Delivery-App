@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/widgets/big_text.dart';
 import 'package:food_delivery/widgets/icon_and_text_widget.dart';
@@ -17,7 +18,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   // ignore: unused_field
   var _currentPageValue = 0.0;
   final _scaleFactor = 0.8;
-  double _height = 220;
+  final _height = 220;
 
   @override
   void initState(){
@@ -39,20 +40,54 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          //color: Colors.redAccent,
+        Container(
           height: 320,
           // The PageView.builder widget is used to create a scrollable list of children widgets.
           child: PageView.builder(
             controller: pageController,
             itemCount: 5,
             itemBuilder: (context, position){
-            return _buildPageItem(position);
-          }),
+              return _buildPageItem(position);
+            }
+          ),
+      ),
+      DotsIndicator(
+          dotsCount: 5,
+          position: _currentPageValue,
+          decorator: DotsDecorator(
+            size: const Size.square(9.0),
+            activeSize: const Size(18.0, 9.0),
+            activeShape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0)
+            ),
+            activeColor: AppColors.mainColor, 
+          ),
+      ),
+      const SizedBox(height: 20),
+      Container(
+        margin: const EdgeInsets.only(left: 20),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            BigText(text: "Popular"),
+            const SizedBox(width: 15),
+            Container(
+              margin: const EdgeInsets.only(bottom: 4),
+              child: BigText (text: '.', color: Colors.black26),
+            ),
+            const SizedBox(width: 15),
+            Container(
+              margin: const EdgeInsets.only(bottom: 3),
+              child: SmallText (text: "Food pairing",),
+            )
+          ],
         )
-      ],
-    );
-  }
+      )
+    ],
+  );
+}
+
+
   Widget _buildPageItem(int index){
     Matrix4 matrix = new Matrix4.identity();
     if (index == _currentPageValue.floor()){
@@ -111,6 +146,10 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                       color: Colors.white,
                       offset: Offset(-5,0),
                     ),
+                    BoxShadow(
+                      color: Colors.white,
+                      offset: Offset(5,0),
+                    ),
                   ]
                 ),
                 child: Container(
@@ -137,19 +176,20 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                       ),
                       const SizedBox(height: 15), 
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           IconAndTextWidget(
                             icon: Icons.circle_sharp,
                             text: "Excellent",  
                             iconColor: AppColors.iconColor1,
                           ),
-                          const SizedBox(width: 32),
+                          
                           IconAndTextWidget(
                             icon: Icons.location_on,
                             text: "2.4km",  
                             iconColor: AppColors.mainColor,
                           ),
-                          const SizedBox(width: 32),
+                          
                           IconAndTextWidget(
                             icon: Icons.access_time_rounded,
                             text: "15min",  
