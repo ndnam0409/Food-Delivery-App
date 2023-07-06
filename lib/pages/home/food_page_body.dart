@@ -4,7 +4,7 @@ import 'package:food_delivery/widgets/big_text.dart';
 import 'package:food_delivery/widgets/icon_and_text_widget.dart';
 import 'package:food_delivery/widgets/small_text.dart';
 
-import '../utils/colors.dart';
+import '../../utils/colors.dart';
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({super.key});
@@ -84,86 +84,83 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         ),
       ),
       // List of food and images
-      SizedBox(
-        height: 700,
-        child: ListView.builder(
+      ListView.builder(
         physics: const NeverScrollableScrollPhysics(),
-        //shrinkWrap: true,
+        shrinkWrap: true,
         itemCount: 10,
         itemBuilder: (context, index){
-          return Container(
-            margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
-            child: Row(
-              children: [
-                // Image section
-                Container(
-                  width: 150, 
-                  height: 150,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white38,
-                    image: const DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(
-                        "assets/image/food3.jpg"
-                        
-                      )
-                      )
+        return Container(
+          margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+          child: Row(
+            children: [
+              // Image section
+              Container(
+                width: 150, 
+                height: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white38,
+                  image: const DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(
+                      "assets/image/food3.jpg"
+                      
                     )
-                  ),
-                  // Text section
-                  Expanded(
-                    child: Container(
-                      height: 100,
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(20),
-                          bottomRight: Radius.circular(20),
-                        ),
-                        color: Colors.white,
+                    )
+                  )
+                ),
+                // Text section
+                Expanded(
+                  child: Container(
+                    height: 100,
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(20),
+                        bottomRight: Radius.circular(20),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10, right: 10),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [ 
-                            BigText(text: "Nutrious fruit meal in Italy", size: 18),
-                            const SizedBox(height: 15),
-                            SmallText(text: "With Italian characteristics"),
-                            const SizedBox(height: 15),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                IconAndTextWidget(
-                                  icon: Icons.circle_sharp,
-                                  text: "Normal",  
-                                  iconColor: AppColors.iconColor1,
-                                ),
-                                
-                                IconAndTextWidget(
-                                  icon: Icons.location_on,
-                                  text: "6.5km",  
-                                  iconColor: AppColors.mainColor,
-                                ),
-                                
-                                IconAndTextWidget(
-                                  icon: Icons.access_time_rounded,
-                                  text: "27min",  
-                                  iconColor: AppColors.iconColor2,
-                                )
-                              ]
-                            )
-                          ],
-                        ),
+                      color: Colors.white,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10, right: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [ 
+                          BigText(text: "Nutrious fruit meal in Italy", size: 18),
+                          const SizedBox(height: 15),
+                          SmallText(text: "With Italian characteristics"),
+                          const SizedBox(height: 15),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              IconAndTextWidget(
+                                icon: Icons.circle_sharp,
+                                text: "Normal",  
+                                iconColor: AppColors.iconColor1,
+                              ),
+                              
+                              IconAndTextWidget(
+                                icon: Icons.location_on,
+                                text: "6.5km",  
+                                iconColor: AppColors.mainColor,
+                              ),
+                              
+                              IconAndTextWidget(
+                                icon: Icons.access_time_rounded,
+                                text: "27min",  
+                                iconColor: AppColors.iconColor2,
+                              )
+                            ]
+                          )
+                        ],
                       ),
                     ),
-                  )
-              ]
-            ),
-          );
-      }),
-      ) 
+                  ),
+                )
+            ]
+          ),
+        );
+      }) 
     ],
   );
 }
