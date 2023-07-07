@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery/widgets/app_column.dart';
 import 'package:food_delivery/widgets/big_text.dart';
 import 'package:food_delivery/widgets/icon_and_text_widget.dart';
 import 'package:food_delivery/widgets/small_text.dart';
@@ -232,51 +233,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 ),
                 child: Container(
                   padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      BigText(text: "Roasted Chicken"),
-                      const SizedBox(height: 10),
-                      Row(
-                        children: [
-                          Wrap(
-                            children: List.generate(5, (index) => Icon(
-                              Icons.star, 
-                              size: 15,
-                              color: AppColors.mainColor,
-                            )),
-                          ),
-                          const SizedBox(width: 15),
-                          SmallText(text: "5.0"),
-                          const SizedBox(width: 15),
-                          SmallText(text: "1234 comments")
-                        ],
-                      ),
-                      const SizedBox(height: 15), 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconAndTextWidget(
-                            icon: Icons.circle_sharp,
-                            text: "Excellent",  
-                            iconColor: AppColors.iconColor1,
-                          ),
-                          
-                          IconAndTextWidget(
-                            icon: Icons.location_on,
-                            text: "2.4km",  
-                            iconColor: AppColors.mainColor,
-                          ),
-                          
-                          IconAndTextWidget(
-                            icon: Icons.access_time_rounded,
-                            text: "15min",  
-                            iconColor: AppColors.iconColor2,
-                          )
-                        ]
-                      )
-                    ],
-                  )
+                  child: const AppColumn(text: "Roasted Chicken"),
                 )
               ),
             ),
