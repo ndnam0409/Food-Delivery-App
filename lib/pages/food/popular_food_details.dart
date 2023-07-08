@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/utils/colors.dart';
 import 'package:food_delivery/widgets/app_column.dart';
@@ -23,7 +22,7 @@ class PopularFoodDetails extends StatelessWidget {
             right: 0,
             child: Container(
               width: double.maxFinite,
-              height: 30,
+              height: 390,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit:  BoxFit.cover,
