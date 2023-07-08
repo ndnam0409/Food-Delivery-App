@@ -23,7 +23,7 @@ class PopularFoodDetails extends StatelessWidget {
             right: 0,
             child: Container(
               width: double.maxFinite,
-              height: 400,
+              height: 30,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit:  BoxFit.cover,
@@ -51,7 +51,7 @@ class PopularFoodDetails extends StatelessWidget {
           Positioned(
             left: 0,
             right: 0,
-            top: 390,
+            top: 380,
             child: Container(
               padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
               decoration: const   BoxDecoration(
