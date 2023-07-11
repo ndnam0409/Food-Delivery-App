@@ -6,6 +6,6 @@ class PopularProductRepo extends GetxService{
   PopularProductRepo({required this.apiClient});
 
   Future<Response> getPopularProductsList() async{
-    return await apiClient.getData("https://www.dbestech.com/api/product/list");
+    return await apiClient.getData("http://mvs.bslmeiyu.com/api/v1/products/list");
   }
 }
